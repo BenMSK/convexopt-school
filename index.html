@@ -284,9 +284,9 @@ button.src{border:0;cursor:pointer;font-size:.72rem}
 <noscript><p class="wrap">Convex Optimization School needs JavaScript for navigation, quizzes, and the interactive widgets.</p></noscript>
 <header class="top"><div class="wrap">
   <div class="brand">
-    <!-- logo: a convex bowl with the minimum marked; tools/makeicon.js draws the same glyph into the PNG icons -->
-    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="4" width="56" height="56" rx="16" fill="var(--acc)"/><path d="M13 16 Q32 66 51 16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="41" r="6" fill="#FBBF24" stroke="#fff" stroke-width="2"/></svg>
-    <div class="bt"><h1>Convex Optimization School</h1><div class="sub">From convex sets to robots, in three weeks · <span class="ver">v1.0 (2026-10-26)</span></div></div>
+    <!-- logo: tilted level-set contours around the minimum; tools/makeicon.js draws the same glyph into the PNG icons -->
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="4" width="56" height="56" rx="16" fill="var(--acc)"/><g transform="rotate(-30 32 32)"><ellipse cx="32" cy="32" rx="25" ry="15.5" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2.8"/><ellipse cx="32" cy="32" rx="17" ry="10.5" fill="none" stroke="#fff" stroke-opacity=".72" stroke-width="2.8"/><ellipse cx="32" cy="32" rx="9.6" ry="5.9" fill="none" stroke="#fff" stroke-opacity="1" stroke-width="2.8"/></g><circle cx="32" cy="32" r="3.6" fill="#FBBF24"/></svg>
+    <div class="bt"><h1>Convex Optimization School</h1><div class="sub">From convex sets to robots, in three weeks · <span class="ver">v1.1 (2026-10-26)</span></div></div>
     <button class="btn" id="theme" type="button" aria-label="Switch color theme"><span class="em">☾</span><span class="lbl">Dark</span></button>
   </div>
   <nav class="tabs" role="tablist" aria-label="Sections"><button class="tab" role="tab" data-tab="course" type="button">Course<span class="long"> · 21 days</span></button><button class="tab" role="tab" data-tab="algos" type="button">Algorithms</button><button class="tab" role="tab" data-tab="papers" type="button">Papers</button><button class="tab" role="tab" data-tab="glossary" type="button">Glossary</button></nav>
@@ -8204,7 +8204,7 @@ x_star.sum().backward()   # gradients land in F_t.grad, g_t.grad, lambd_t.grad</
 </div>
 </main>
 
-<footer class="foot"><div class="wrap">Convex Optimization School · <span class="ver">v1.0 (2026-10-26)</span> · Based on <a href="https://convex-optimization-for-all.github.io/">모두를 위한 컨벡스 최적화</a> (MIT License) · <a href="https://github.com/BenMSK/convexopt-school">source</a> · Progress is saved on this device only.</div></footer>
+<footer class="foot"><div class="wrap">Convex Optimization School · <span class="ver">v1.1 (2026-10-26)</span> · Based on <a href="https://convex-optimization-for-all.github.io/">모두를 위한 컨벡스 최적화</a> (MIT License) · <a href="https://github.com/BenMSK/convexopt-school">source</a> · Progress is saved on this device only.</div></footer>
 
 <!-- optional data for widgets: read with DATA.name -->
 <script id="data" type="application/json">{}</script>

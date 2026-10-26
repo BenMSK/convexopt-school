@@ -21,7 +21,7 @@ ConvexOpt_school/
 ├─ research/NN_<slug>.md, papers_[abc].md   ← research notes per day (sources, verified numbers, cautions). Not published.
 └─ school/                     ← git root, the published folder
    ├─ index.html               ← the whole site: CSS + content + script. The only source.
-   ├─ apple-touch-icon.png     ← iOS home-screen icon 180px (a convex bowl with its minimum)
+   ├─ apple-touch-icon.png     ← iOS home-screen icon 180px (tilted level-set contours around an amber minimum)
    ├─ icon-192.png, icon-512.png, manifest.webmanifest   ← Android / PWA icon and manifest
    ├─ .nojekyll                ← GitHub Pages serves files as-is
    ├─ tools/htmlcheck.js       ← tag balance, quiz answers in range, every data-viz has a VIZ function, no duplicate ids
@@ -71,6 +71,7 @@ ConvexOpt_school/
 
 | Date | Version | Tag | What |
 |---|---|---|---|
+| 2026-10-26 | v1.1 | icon | New logo and home-screen icons: three tilted contour rings around the minimum, replacing the bowl. `tools/makeicon.js` gains a rotated `ring` shape. |
 | 2026-10-26 | v1.0 | first release | 21 days (Week 1 foundations: CO4A ch 1–9 · Week 2 duality and algorithms: ch 10–23 · Week 3 MIP (ch 24–25), nonlinear optimization, MPC, SCP, collision avoidance and GCS, CBF and differentiable optimization, solvers), 26 widgets, 17 algorithm cards, 15 papers, 140-term glossary. |
 
 ## Known gaps and unverified items

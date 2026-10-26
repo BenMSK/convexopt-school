@@ -7,11 +7,11 @@ const outDir = process.argv[2] || ".";
 
 const ICON = {
   bg: ["#4F46E5", "#7C3AED"],            // diagonal gradient, top-left → bottom-right (same colour twice = flat)
-  shapes: [                              // painted in order; kinds: rect [x,y,w,h,r] · circle [cx,cy,r] · ellipse [cx,cy,rx,ry] · poly [[x,y],…]
-    { poly: [[10.66,16.89],[12.27,20.95],[13.89,24.68],[15.52,28.07],[17.16,31.13],[18.82,33.86],[20.51,36.26],[22.24,38.34],[24.02,40.1],[25.88,41.53],[27.83,42.6],[29.88,43.27],[32,43.5],[34.12,43.27],[36.17,42.6],[38.12,41.53],[39.98,40.1],[41.76,38.34],[43.49,36.26],[45.18,33.86],[46.84,31.13],[48.48,28.07],[50.11,24.68],[51.73,20.95],[53.34,16.89],[48.66,15.11],[47.11,19.04],[45.56,22.6],[44.02,25.81],[42.49,28.65],[40.99,31.13],[39.51,33.24],[38.07,34.98],[36.68,36.34],[35.38,37.35],[34.16,38.02],[33.05,38.38],[32,38.5],[30.95,38.38],[29.84,38.02],[28.62,37.35],[27.32,36.34],[25.93,34.98],[24.49,33.24],[23.01,31.13],[21.51,28.65],[19.98,25.81],[18.44,22.6],[16.89,19.04],[15.34,15.11]], fill: "#FFFFFF" },   // the bowl (stroke 5 of M13 16 Q32 66 51 16)
-    { circle: [13, 16, 2.5], fill: "#FFFFFF" }, { circle: [51, 16, 2.5], fill: "#FFFFFF" },   // round caps
-    { circle: [32, 41, 8], fill: "#FFFFFF" },
-    { circle: [32, 41, 6], fill: "#FBBF24" },   // the minimum
+  shapes: [                              // painted in order; kinds: rect [x,y,w,h,r] · circle [cx,cy,r] · ellipse [cx,cy,rx,ry] · ring [cx,cy,rx,ry,width,deg] · poly [[x,y],…]
+    { ring: [32, 32, 25, 15.5, 2.8, -30], fill: "#9E98F0" },
+    { ring: [32, 32, 17, 10.5, 2.8, -30], fill: "#C9C6F8" },
+    { ring: [32, 32, 9.6, 5.9, 2.8, -30], fill: "#FFFFFF" },
+    { circle: [32, 32, 3.6], fill: "#FBBF24" },             // the minimum
   ],
 };
 
@@ -27,6 +27,8 @@ const inside = (x, y, s) =>
   s.rect ? inRect(x, y, s.rect) :
   s.circle ? Math.hypot(x - s.circle[0], y - s.circle[1]) <= s.circle[2] :
   s.ellipse ? ((x - s.ellipse[0]) / s.ellipse[2]) ** 2 + ((y - s.ellipse[1]) / s.ellipse[3]) ** 2 <= 1 :
+  s.ring ? (([cx, cy, rx, ry, w, deg = 0]) => { const a = deg * Math.PI / 180, dx = x - cx, dy = y - cy, u = dx * Math.cos(a) + dy * Math.sin(a), v = -dx * Math.sin(a) + dy * Math.cos(a);
+    const e = d => (u / (rx + d)) ** 2 + (v / (ry + d)) ** 2; return e(w / 2) <= 1 && e(-w / 2) > 1; })(s.ring) :
   s.poly ? inPoly(x, y, s.poly) : false;
 
 const BG1 = hex(ICON.bg[0]), BG2 = hex(ICON.bg[1]), FILLS = ICON.shapes.map(s => hex(s.fill));
