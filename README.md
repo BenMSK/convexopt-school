@@ -10,7 +10,8 @@ The course is one self-contained web page with 21 lessons, 26 interactive widget
 
 | Where | URL | Notes |
 |---|---|---|
-| GitHub Pages | https://benmsk.github.io/convexopt-school/ (not yet published) | Public. Progress (days done) and theme are saved only in the browser. Add it to the phone home screen for an app icon. |
+| GitHub Pages | https://benmsk.github.io/convexopt-school/ | Public. Progress (days done) and theme are saved only in the browser. Add it to the phone home screen for an app icon. |
+| Repo | https://github.com/BenMSK/convexopt-school | Branch `main`; Pages serves the root. |
 | Local | double-click `index.html` | Works offline except Google Fonts. |
 
 ## Files
@@ -93,4 +94,3 @@ ConvexOpt_school/
   - Some recap-table rates and costs (Day 14).
 - **Fast-moving facts (as of Oct 2026):** solver versions, GPU solver features (Gurobi PDHG on GPU, cuOpt, cuPDLP, OSQP 1.x CUDA), CVXPY's solver table counts (31 LP / 25 QP / 17 SOCP / 9 SDP, re-checked 2026-10-26), and the cvxpylayers 1.2.0 release (2026-05-19).
 - **Testing limits:** the phone layout was checked at 360 px inside a headless iframe, and no page scrolls sideways. It has not yet been checked on a physical phone. Some review screenshots were taken with fallback fonts because Google Fonts requests stalled in headless Edge.
-- **Not yet published:** the GitHub repo `BenMSK/convexopt-school` does not exist yet, so the footer's "source" link is dead until it is created.
